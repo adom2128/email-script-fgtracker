@@ -2,8 +2,7 @@ name: run main.py
 
 on:
   schedule:
-    # - cron: '0 */2 * * *' # Every 2 hours
-    - cron: '*/2 * * * *'
+    - cron: '0 */2 * * *' # Every 2 hours
   workflow_dispatch: {}
 
 jobs:
@@ -28,16 +27,3 @@ jobs:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
         run: python main.py
-
-      # - name: commit files
-      #   run: |
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git add -A
-      #     git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
-
-      # - name: push changes
-      #   uses: ad-m/github-push-action@v0.6.0
-      #   with:
-      #     github_token:
-      #     branch: main

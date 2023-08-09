@@ -8,8 +8,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 imap_server = "imap.gmail.com"
-email_address = os.environ("EMAIL_USER")
-password = os.environ("EMAIL_PASSWORD")
+email_address = os.environ["EMAIL_USER"]
+password = os.environ["EMAIL_PASSWORD"]
 path="http://127.0.0.1:5000/surveys"
 
 mail = imaplib.IMAP4_SSL(imap_server)
