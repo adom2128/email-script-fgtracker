@@ -25,8 +25,8 @@ jobs:
 
       - name: execute py script # run main.py
         env:
-          EMAIL_PASSWORD: ${{ env.EMAIL_PASSWORD }}
-          EMAIL_USER: ${{ env.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
         run: python main.py
 
       # - name: commit files
