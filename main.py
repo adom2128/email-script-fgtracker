@@ -33,9 +33,11 @@ if status == "OK":
             for part in msg.walk():
                 if part.get_content_type() == "text/plain":
                     body = part.get_payload(decode=True).decode("utf-8")
+                    print(body)
 
                     last_four_match = re.search(r'Card: \*(\d+)', body)
-                    balance_match = re.search(r'\* Current balance: \* \$(\d+\.\d+)', body)
+                    balance_match = re.search(r'balance is \$(\d+\.\d+)', body)
+
 
                     last_four = last_four_match.group(1)
                     payment_left = float(balance_match.group(1))
